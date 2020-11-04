@@ -1,4 +1,4 @@
-# Brian Abedi Responsive Portfolio 
+# VoteRight
 
 ![wireframe](assets/voterightwireframe.png)
 
