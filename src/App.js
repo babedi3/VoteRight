@@ -1,52 +1,26 @@
-/**
- * @format
- * @flow strict-local
- */
-import 'react-native-gesture-handler';
-import React from 'react';
-import {
-  StatusBar, 
-  Image
-} from 'react-native';
-import HomeScreen from './screens/HomeScreen';
-import UnitedStates from './screens/UnitedStates';
-import { NavigationContainer } from '@react-navigation/native';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import Ionicons from 'react-native-vector-icons/Ionicons';
+import * as React from "react";
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from '@react-navigation/stack';
+import { HomeScreen } from "./components/Login/HomeScreen";
+import LoginScreen from "./components/Login/LoginScreen";
+import RegisterScreen from "./components/Login/RegisterScreen";
+import DataScreenNav from "./screens/DataScreens";
+import { Provider } from "react-redux";
+import { store } from "./redux/store"
 
+const Stack = createStackNavigator();
 
-const Tab = createBottomTabNavigator();
-
-const App: () => React$Node = () => {
+export default function App() {
   return (
+    <Provider store={store}>
     <NavigationContainer>
-      <StatusBar barStyle="dark-content"/>
-      <Tab.Navigator
-        screenOptions={({ route }) => ({
-          tabBarIcon: ({ focused, color, size }) => {
-            if (route.name === 'Settings') {
-              return <Ionicons name="settings" size={size} color={'black'}/>;
-            }
-            if (route.name === 'State') {
-              return <Image source={require('./assets/georgia.png')}/>;
-            }
-            if (route.name === 'US') {
-              return <Image source={require('./assets/us.png')}/>;
-            }
-          },
-        })}
-        tabBarOptions={{
-          activeTintColor: 'white',
-          inactiveTintColor: 'white',
-          showLabel: 'false',
-        }}
-      > 
-        <Tab.Screen name="State" component={HomeScreen} />
-        <Tab.Screen name="US" component={UnitedStates} />
-        <Tab.Screen name="Settings" component={HomeScreen} />
-      </Tab.Navigator>
+      <Stack.Navigator>
+        <Stack.Screen name="Welcome" component={HomeScreen} />
+        <Stack.Screen name="Login" component={LoginScreen} />
+        <Stack.Screen name="Register" component={RegisterScreen} />
+        <Stack.Screen name="DataScreenNav" component={DataScreenNav}/>
+      </Stack.Navigator>
     </NavigationContainer>
+    </Provider>
   );
-};
-
-export default App;
+}
