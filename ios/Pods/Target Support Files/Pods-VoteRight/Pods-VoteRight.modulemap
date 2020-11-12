@@ -1,0 +1,6 @@
+module Pods_VoteRight {
+  umbrella header "Pods-VoteRight-umbrella.h"
+
+  export *
+  module * { export * }
+}
