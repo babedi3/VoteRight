@@ -1,6 +1,0 @@
-module Pods_VoteRight_VoteRightTests {
-  umbrella header "Pods-VoteRight-VoteRightTests-umbrella.h"
-
-  export *
-  module * { export * }
-}

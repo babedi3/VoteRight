@@ -1,26 +1,24 @@
-import * as React from "react";
-import { NavigationContainer } from "@react-navigation/native";
-import { createStackNavigator } from '@react-navigation/stack';
-import { HomeScreen } from "./components/Login/HomeScreen";
-import LoginScreen from "./components/Login/LoginScreen";
-import RegisterScreen from "./components/Login/RegisterScreen";
-import DataScreenNav from "./screens/DataScreens";
-import { Provider } from "react-redux";
-import { store } from "./redux/store"
+/**
+ * @format
+ * @flow strict-local
+ */
+import 'react-native-gesture-handler';
+import React from 'react';
+import {StatusBar} from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { withAuthenticator } from 'aws-amplify-react-native';
 
-const Stack = createStackNavigator();
+import Router from './router'
 
-export default function App() {
+const App: () => React$Node = () => {
   return (
-    <Provider store={store}>
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Welcome" component={HomeScreen} />
-        <Stack.Screen name="Login" component={LoginScreen} />
-        <Stack.Screen name="Register" component={RegisterScreen} />
-        <Stack.Screen name="DataScreenNav" component={DataScreenNav}/>
-      </Stack.Navigator>
+      <StatusBar barStyle="dark-content"/>
+      <Router/>
     </NavigationContainer>
-    </Provider>
+    
   );
-}
+}; 
+
+
+export default withAuthenticator(App, true);

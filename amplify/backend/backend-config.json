@@ -1,0 +1,10 @@
+{
+  "auth": {
+    "voteright34793be6": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false
+    }
+  }
+}
