@@ -49,10 +49,10 @@ export const onFetchVoters = () => {
 }
 }
 
-const congressUrl = "https://api.propublica.org/congress/v1/116/senate/members.json"
+const senateUrl = "https://api.propublica.org/congress/v1/116/senate/members.json"
 export const onFetchSenate = () => {
     return async (dispatch) => {
-        return await axios.get (congressUrl,
+        return await axios.get (senateUrl,
             {
                 headers: {
                     "X-API-Key": "tEst2appJ7QTtNdPHTKr9sYr4gmcqq0Keop8H4sz"
