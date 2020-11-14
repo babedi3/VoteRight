@@ -8,11 +8,24 @@ const styles = StyleSheet.create({
     },
     text2: {
         padding: 18,
-        fontSize: 15,
+        fontSize: 25,
+        color: 'black'
     },
     text3: {
         padding: 18,
         textAlign: 'center',
+        fontSize: 20,
+        color: 'blue',
+    },text4: {
+        // padding: 18,
+        marginTop: -10,
+        marginRight: 25,
+        marginLeft: 10,
+        fontSize: 15,
+        color: 'black',
+    },text5: {
+        padding: 10,
+        borderColor: 'black',
         fontSize: 20,
         color: 'blue',
     },
@@ -35,6 +48,11 @@ const styles = StyleSheet.create({
     scroll: {
        maxHeight: 150,
     },
+        container: {
+          marginTop: -80,
+          height: 200, 
+          width: 150 
+        }
 });
 
 export default styles;
