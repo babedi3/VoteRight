@@ -5,7 +5,9 @@ const InitialState = {
   isLoading: false,
   error: null,
   displayContent: false,
-  senators: []
+  senators: [],
+  congress: [],
+  g: []
 };
 
 export const voterReducer = (state = InitialState, action) => {
@@ -29,6 +31,16 @@ export const voterReducer = (state = InitialState, action) => {
         return {
           ...state,
           senators: action.payload,
+        };
+      case "FETCH_CONGRESS":
+      return {
+        ...state,
+        congress: action.payload,
+      };
+      case "G_FETCH":
+        return {
+          ...state,
+          g: action.payload,
         };
     default:
       return state;
