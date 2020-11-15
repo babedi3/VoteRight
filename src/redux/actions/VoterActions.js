@@ -106,34 +106,3 @@ export const onFetchCongress = () => {
         
 }
 
-
-//api-key: AIzaSyAbM4HZ2v9M1Gxx1_mOWDJLPyAfnVFRk10
-const g = "https://civicinfo.googleapis.com/civicinfo/v2/representatives?address=georgia&includeOffices=true&levels=country&roles=legislatorUpperBody&key=AIzaSyAbM4HZ2v9M1Gxx1_mOWDJLPyAfnVFRk10"
-export const onGFetch = () => {
-    return async (dispatch) => {
-        return await axios.get (g,
-            // {
-            //     headers: {
-            //         "X-API-Key": "tEst2appJ7QTtNdPHTKr9sYr4gmcqq0Keop8H4sz"
-            //     }
-            // }
-            )
-        
-        .then(response => {response;
-            dispatch ({
-                type:"G_FETCH",
-                payload: response.data
-            })
-            //console.log(response.data.results[0].members)
-            }
-               )
-        
-        .catch (error => { error;
-            dispatch ({
-                type: "ERROR",
-                payload: error
-            })
-        }
-        )}
-        
-}
