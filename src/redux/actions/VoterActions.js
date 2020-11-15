@@ -76,3 +76,33 @@ export const onFetchSenate = () => {
         )}
         
 }
+
+const congressUrl = "https://api.propublica.org/congress/v1/116/house/members.json"
+export const onFetchCongress = () => {
+    return async (dispatch) => {
+        return await axios.get (congressUrl,
+            {
+                headers: {
+                    "X-API-Key": "tEst2appJ7QTtNdPHTKr9sYr4gmcqq0Keop8H4sz"
+                }
+            }
+            )
+        .then(response => {response;
+            dispatch ({
+                type:"FETCH_CONGRESS",
+                payload: response.data
+            })
+            //console.log(response.data.results[0].members)
+            }
+               )
+        
+        .catch (error => { error;
+            dispatch ({
+                type: "ERROR",
+                payload: error
+            })
+        }
+        )}
+        
+}
+
