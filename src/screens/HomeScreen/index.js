@@ -4,11 +4,11 @@ import {Text, /* ScrollView, View, */ SafeAreaView,} from 'react-native';
  */import StateOfficials from '../../components/StateOfficials';
 import styles from './styles';
 
-const HomeScreen = () => (
+const HomeScreen = ({stateCode}) => (
     <SafeAreaView>
-        <Text style={styles.text}>GEORIGA</Text>
-        <StateOfficials/>
-        <Text style={styles.text3}>Georgia Elections</Text>
+        <Text style={styles.text} >{stateCode.label}</Text>
+        <StateOfficials stateCode={stateCode} />
+        <Text style={styles.text3}>{stateCode.label} Elections</Text>
     </SafeAreaView>
 )
 export default HomeScreen;
