@@ -5,12 +5,18 @@ import {useNavigation} from '@react-navigation/native';
 import ProfilePicture from "../ProfilePicture";
 
 
-const OfficialInfoCard = ({imageUri, name, title}) => {
+const OfficialInfoCard = ({name, title, birthday, party, imageUri}) => {
 
     const navigation = useNavigation();
 
     const onPress = () => {
-        navigation.navigate('OfficialInfoScreen');
+        navigation.navigate('OfficialInfoScreen', {
+            name: name,
+            title: title,
+            birthday:birthday,
+            party:party,
+            imageUri:imageUri
+          });
     }
 
     return (
