@@ -1,15 +1,16 @@
 import React, {useState} from 'react';
-import {Text, /* ScrollView, View, */ SafeAreaView, FlatList, View, Picker, Button, Alert} from 'react-native';
-import SettingsPage from '../../components/SettingsPage';
+import {Text, ImageBackground, SafeAreaView, FlatList, View, Picker} from 'react-native';
 import Hyperlink from 'react-native-hyperlink';
 import styles from './styles';
 import { useLinkProps } from '@react-navigation/native';
 
 
 
+
 const SettingsScreen = ({handleChangeStateCode, stateCode, /* statesArray */}) => {
 /*     const [selectedValue, setSelectedValue] = useState("java");
- */    
+ */   
+    const image = { uri: 'https://newcitytimes.com/images/made/images/uploads/Third_Party_Symbols_980_530_80_s_c1_t_c_0_0_1.jpg' };
     const statesArray = [
   
         {value: "FL", label:"Florida"},
@@ -67,19 +68,11 @@ const SettingsScreen = ({handleChangeStateCode, stateCode, /* statesArray */}) =
     return(
     <SafeAreaView>
         
+      {/* <Text style={styles.text}>Inside</Text> */}
+    
         <Text style={styles.text}>Settings</Text>
-        <Text style={styles.text3}> Future Development: </Text>
         
-        <Text style={styles.text2}
-            color='dark blue'>Facebook Login: </Text>
-        <Text style={styles.text4}>In the future the user will have the ability to signup using the users Facebook Account.</Text>
-            <Button 
-            title="Facebook Authentication"
-            color="dark blue"
-            onPress={() => Alert.alert('FaceBook Login Coming Soon!!')}
-            />
-        <Text style={styles.text2}>State Dropdown </Text>
-        <Text style={styles.text4}>In the future we will provide the user with the ability to select a state that will be defaulted when searching the app for data.'</Text>
+        <Text style={styles.text2}>Select Your State </Text>
             <Picker 
                 style={styles.container}
                 selectedValue={stateCode.value}
@@ -145,26 +138,27 @@ const SettingsScreen = ({handleChangeStateCode, stateCode, /* statesArray */}) =
         <Text style={styles.text2}>Register to Vote </Text>
         <Hyperlink linkDefault={ true }
             linkText={ url => url === 'https://www.usa.gov/register-to-vote' ? 'Click to find out how to register to vote. Vote Right!!' : url }
-            >
+            >{
             <Text style={styles.text4}>
                  https://www.usa.gov/register-to-vote
             </Text>
-        
+           
+}
         </Hyperlink>
-        <Text style={styles.text2}>Political News </Text>
-        <Hyperlink linkDefault={ true }
-            linkText={ url => url === 'https://www.usnews.com/news/political-news' ? 'Click to find out the latest political news from US News.' : url }
-            >
-            <Text style={styles.text4}>
-                 https://www.usnews.com/news/political-news
-            </Text>
-        
-        </Hyperlink>
-        
-        
-        
-    {/* <SettingsPage/> */}
        
+        <Text>{}</Text>
+        <ImageBackground source={image} style={{ 
+            marginTop: '10%', 
+            marginLeft: '5%',
+            resizeMode: "cover",
+            justifyContent: "center", 
+            width: '95%', 
+            height: '52%'
+            }}>
+          
+        </ImageBackground> 
+            
+    
     </SafeAreaView>
       
 )}
