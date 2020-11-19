@@ -146,7 +146,7 @@ const SettingsScreen = ({handleChangeStateCode, stateCode, /* statesArray */}) =
 }
         </Hyperlink>
        
-        <Text>{''}</Text>
+        <Text>{}</Text>
         <ImageBackground source={image} style={{ 
             marginTop: '10%', 
             marginLeft: '5%',
