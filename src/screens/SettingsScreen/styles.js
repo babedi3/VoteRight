@@ -9,7 +9,8 @@ const styles = StyleSheet.create({
     text2: {
         padding: 18,
         fontSize: 25,
-        color: 'black'
+        color: 'black',
+        fontWeight: "bold",
     },
     text3: {
         padding: 18,
@@ -20,9 +21,9 @@ const styles = StyleSheet.create({
         // padding: 18,
         marginTop: -10,
         marginRight: 25,
-        marginLeft: 10,
+        marginLeft: 20,
         fontSize: 15,
-        color: 'black',
+        color: 'blue',
     },text5: {
         padding: 10,
         borderColor: 'black',
