@@ -1,8 +1,8 @@
-var express = require("express");
-var router = express.Router();
-var mongojs = require("mongojs");
+const express = require("express");
+const router = express.Router();
+const mongojs = require("mongojs");
 
-var db = mongojs("mongodb+srv://voteright:vote123@cluster0.njbzf.mongodb.net/voteright?retryWrites=true&w=majority")
+const db = mongojs("mongodb+srv://voteright:vote123@cluster0.njbzf.mongodb.net/voteright?retryWrites=true&w=majority")
 router.get("/dbinfo", function(req, res, next){
 
   //res.send("dbinfo");
@@ -18,7 +18,7 @@ router.get("/dbinfo", function(req, res, next){
 router.post("/dbinfo", function(req,res,next){
   var dbinformation = req.body.data;
 
-  if(!booking.userName){
+  if(!dbinformation.username){
     res.status(400);
     res.json({
       error: "Bad data"
