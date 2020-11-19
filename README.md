@@ -62,4 +62,4 @@ npm test
 
 ## Questions
 
-If you have any questions about the repo, open an issue or contact me directly at babedi3@gatech.edu. You can find more of my work at [babedi3](https://github.com/babedi3/).
+If you have any questions about the repo, open an issue or contact me directly at babedi3@gatech.edu. You can find more of my work at [babedi3](https://github.com/babedi3/)...
