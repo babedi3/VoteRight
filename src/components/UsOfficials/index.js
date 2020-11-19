@@ -10,8 +10,7 @@ const UsOfficials = () => {
 
     useEffect(() => {
         const headers = {
-            'Content-Type': 'application/json',
-            'X-API-Key': 'TlSlzuHKa8O0FbZpjhnDO3IWIh8aUiraXBY91XD2'
+            'X-API-Key': 'hMH552ChNPO1vNp8BxcEeGcxV74mx9w1gfEclcoq'
         }
 
         axios.get('https://theunitedstates.io/congress-legislators/legislators-current.json').then((response) => {
@@ -48,11 +47,11 @@ const UsOfficials = () => {
             //console.log('legislators', legislators);
 
             //setAppState({ loading: true });
-            axios.get('https://api.propublica.org/congress/v1/members/house/IL/current.json', {
-                headers: headers
+            axios.get('https://developer.nrel.gov/api/alt-fuel-stations/v1.json?limit=1&api_key=hMH552ChNPO1vNp8BxcEeGcxV74mx9w1gfEclcoq', {
+                //headers: headers
             }).then((response) => {
-                //console.log(response);
-
+                console.log(response);
+/* 
                 let newData = [];
 
                 for (let i = 0; i < response.data.results.length; i++) {
@@ -72,7 +71,7 @@ const UsOfficials = () => {
                     });
                 }
 
-                setData(newData);
+                setData(newData); */
 
                 //console.log('newData', newData);
             })

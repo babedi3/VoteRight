@@ -4,8 +4,7 @@ import styles from './styles';
 import {useNavigation} from '@react-navigation/native';
 import ProfilePicture from "../ProfilePicture";
 
-
-const OfficialInfoCard = ({name, title, birthday, party, imageUri}) => {
+const OfficialInfoCard = ({name, title, birthday, party, imageUri, votePositions}) => {
 
     const navigation = useNavigation();
 
@@ -15,7 +14,8 @@ const OfficialInfoCard = ({name, title, birthday, party, imageUri}) => {
             title: title,
             birthday:birthday,
             party:party,
-            imageUri:imageUri
+            imageUri:imageUri,
+            votePositions:votePositions,
           });
     }
 
