@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
         marginRight: 25,
         marginLeft: 10,
         fontSize: 15,
-        color: 'black',
+        color: 'blue',
     },text5: {
         padding: 10,
         borderColor: 'black',
@@ -50,8 +50,8 @@ const styles = StyleSheet.create({
     },
         container: {
           marginTop: -80,
-          height: 200, 
-          width: 150 
+          height: 200,
+          width: 150
         }
 });
 
